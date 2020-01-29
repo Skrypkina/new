@@ -186,7 +186,7 @@ input[type="checkbox"]:checked {
   border: 2px solid $inner-border-color;
 }
 td {
-  background: #ffffff;
+  background: $inner-container-background;
   border-bottom: 1px solid $table-border-color;
   border-radius: 5px;
   height: 66px;
@@ -195,7 +195,7 @@ tr:last-child {
   border-bottom: none;
 }
 .table-link {
-  color: #0288d1;
+  color: $table-link-color;
   text-decoration: none;
   position: relative;
 }
@@ -215,7 +215,7 @@ tr:last-child {
   top: 0;
   left: 89%;
   z-index: 2;
-  background: white;
+  background: $inner-container-background;
   content: " ";
   background-image: url("../images/icons/vector.png");
   background-position: center;
@@ -232,8 +232,8 @@ tr:last-child {
 }
 .recrawlBtn {
   border: transparent;
-  color: #0288d1;
-  border: 1px solid #0288d1;
+  color: $table-link-color;
+  border: 1px solid $table-link-color;
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 13px;
@@ -241,10 +241,10 @@ tr:last-child {
   background-color: transparent;
 }
 .table-status {
-  color: #2ac9a1;
+  color: $table-status-success;
   line-height: 16px;
 }
 
 .span {
-  color: #fb6868;
+  color: $table-status-error;
 }
