@@ -1,4 +1,5 @@
 import "./sass/style.scss";
+const moment = require("moment");
 
 ("use strict");
 
@@ -16,6 +17,12 @@ const checkStatus = num => {
 
 const markup = (path, submitted, check, stat, links) => {
   const checked = checkStatus(stat);
+  const date = submitted;
+  const updatedDate = moment(date).format(" MMMM Do YYYY");
+  const newDate = check;
+  const updatedNewDate = moment(date).format("MMMM Do YYYY");
+  console.log(updatedNewDate);
+
   return `
   <tr class="table-row">
  <td>   <input type="checkbox" name="" value="" /></td>
@@ -25,8 +32,8 @@ const markup = (path, submitted, check, stat, links) => {
   class="table-link"
 >${path}</td>
   <td>Sitemap index</td>
-  <td>${submitted}</td>
-  <td>${check}</td>
+  <td>${updatedDate}</td>
+  <td>${updatedNewDate}</td>
   <td class="table-status">${checked}</td>
   <td>${links}</td>
   <td><button type="button" class="recrawlBtn">Recrawl</button></td>
@@ -43,9 +50,6 @@ fetch("https://semalt.tech/dev/api/v1/example/test/")
     throw new Error("Error while fetching " + response.statusText);
   })
   .then(data => {
-    const date = data.result.sitemap[0].errors;
-    console.log(date);
-
     const res = data.result.sitemap.reduce(
       (acc, arr) =>
         acc +
