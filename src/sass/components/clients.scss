@@ -1,0 +1,56 @@
+.clients-title {
+  @extend %title;
+}
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 479px) {
+    justify-content: space-between;
+  }
+  @media (min-width: $mobile) {
+    margin: -15px;
+  }
+  @media (min-width: $desctop) {
+    flex-wrap: nowrap;
+  }
+}
+
+.clients-item {
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: calc((100% - 30px) / 2);
+  @include hover(border);
+  &:hover {
+    border: 1px solid $secondary-color;
+  }
+  @media (max-width: 479px) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: $mobile) {
+    max-width: 210px;
+    margin: 15px;
+  }
+}
+
+.clients-link {
+  display: block;
+  padding: 22px 0px;
+  @include hover(fill);
+  &:focus .clients-svg {
+    fill: $secondary-color;
+  }
+}
+.clients-svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  fill: $secondary-text-color;
+  @include hover(fill);
+  .clients-item:hover & {
+    fill: $secondary-color;
+  }
+}

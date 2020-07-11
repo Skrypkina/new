@@ -3,11 +3,24 @@
 @import "helpers/mixins.scss";
 @import "normalize.scss";
 
-// slick-carousel slider
-@import "./slickfix.scss";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
-
 // components
+// header
 @import "components/base.scss";
-@import "components/main.scss";
+@import "components/container.scss";
+@import "components/header-wrapper.scss";
+@import "components/header.scss";
+// @import "components/side-mobileMenu.scss";
+
+// main
+
+@import "components/hero.scss";
+@import "components/advantages.scss";
+@import "components/capability.scss";
+@import "components/team.scss";
+@import "components/clients.scss";
+
+// modal
+@import "components/modal.scss";
+
+// footer
+@import "components/footer.scss";

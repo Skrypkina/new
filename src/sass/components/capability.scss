@@ -1,0 +1,43 @@
+.capability {
+  display: none;
+  @media (min-width: $desctop) {
+    display: block;
+    padding-bottom: 94px;
+  }
+}
+.capability-title {
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.03em;
+  font-size: 36px;
+  line-height: 1.17;
+  margin-bottom: 50px;
+}
+
+.capability-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+.capability-item {
+  position: relative;
+  margin: 15px;
+}
+
+.capability-descr {
+  position: absolute;
+  width: 100%;
+  top: 225px;
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 27px 0px;
+  background-color: $capability-items;
+  color: $hero-section-main-color;
+}
+
+.capability-img {
+  width: 100%;
+}

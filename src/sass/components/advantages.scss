@@ -1,0 +1,54 @@
+.advantages {
+  text-align: center;
+}
+
+.advantages-title {
+  @extend %visually-hidden;
+}
+
+.advantages-list {
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.advantages-item {
+  @extend %item;
+}
+
+.advantages-img {
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 30px;
+  &.antenna {
+    background-image: url("../images/antenna\ 1.svg");
+  }
+  &.clock {
+    background-image: url("../images/clock\ 1.svg");
+  }
+  &.comp {
+    background-image: url("../images/diagram\ 1.svg");
+  }
+  &.fly {
+    background-image: url("../images/astronaut\ 1.svg");
+  }
+}
+
+.advantages-subtitle {
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.advantages-text {
+  text-align: left;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: $secondary-text-color;
+}

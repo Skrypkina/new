@@ -3,82 +3,950 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Webstudio</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <title>Test task</title>
+    <link rel="stylesheet" href="./dist/css/main.min.css" />
   </head>
   <body>
-    <article class="container">
-      <div class="inner-section">
-        <!-- Table header -->
-        <div class="inner-section__header">
-          <h2 class="header-title">Submitted sitemaps</h2>
-          <div class="header-buttonsSection">
-            <button type="button" class="header-button">Recrawl sitemap</button>
-            <button type="button" class="header-button">Remove sitemap</button>
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper">
+          <a href="./index.html" class="site-logo"
+            >Web <span class="logo-span">Studio</span></a
+          >
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            class="mobile-button"
+            data-menu-button
+          >
+            <!-- <svg
+            class="mobile-menu"
+            aria-label="switches mobile menu"
+            width="40"
+            height="40"
+          >
+            <use
+              class="icon-menu"
+              href="./images/symbol-defs.svg#icon-menu_40px"
+            ></use>
+            <use
+              class="icon-cross"
+              href="./images/symbol-defs.svg#icon-close_40px"
+            ></use>
+          </svg> -->
+            <svg
+              width="40"
+              height="40"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-menu"
+              aria-label="switches mobile menu"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 14.667V12h24v2.667H8zm0 6.666h24v-2.666H8v2.666zM8 28h24v-2.667H8V28z"
+              />
+            </svg>
+            <svg
+              class="icon-cross"
+              width="40"
+              height="40"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="switches mobile menu"
+            >
+              <path
+                d="M29.667 12.88L27.787 11l-7.454 7.453L12.88 11 11 12.88l7.453 7.453L11 27.787l1.88 1.88 7.453-7.454 7.454 7.454 1.88-1.88-7.454-7.454 7.454-7.453z"
+              />
+            </svg>
+          </button>
+          <!-- div mobile-menu only for side-mobileMenu -->
+          <!-- <div class="mobile-menu" data-mobile> -->
+          <div class="menu-container" id="menu-container" data-menu>
+            <nav class="nav">
+              <ul class="navigation">
+                <li class="navigation-item">
+                  <a href="" class="navigation-link current-page">
+                    Studio
+                  </a>
+                </li>
+                <li class="navigation-item">
+                  <a href="" target="_blank" class="navigation-link">
+                    Portfolio
+                  </a>
+                </li>
+
+                <li class="navigation-item">
+                  <a href="" class="navigation-link">
+                    Contacts
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <ul class="contacts">
+              <li class="contacts-item">
+                <a href="" class="contacts-link">
+                  <svg
+                    width="16"
+                    height="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="contacts-svg"
+                  >
+                    <path
+                      d="M14.5 0h-13C.673 0 0 .628 0 1.4v8.402c0 .772.673 1.4 1.5 1.4h13c.827 0 1.5-.628 1.5-1.4V1.4c0-.772-.673-1.4-1.5-1.4zm0 .933a.53.53 0 01.192.037L8 6.384 1.308.97A.529.529 0 011.5.933h13zm0 9.335h-13c-.276 0-.5-.209-.5-.466V1.956l6.672 5.398A.52.52 0 008 7.468a.52.52 0 00.328-.114L15 1.956v7.846c0 .257-.224.466-.5.466z"
+                    />
+                  </svg>
+                  info@devstudio.com
+                </a>
+              </li>
+
+              <li class="contacts-item">
+                <a href="" class="contacts-link">
+                  <svg
+                    width="10"
+                    height="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="contacts-svg"
+                  >
+                    <path
+                      d="M8.5 0h-7C.673 0 0 .628 0 1.4v12.136c0 .772.673 1.4 1.5 1.4h7c.827 0 1.5-.628 1.5-1.4V1.4C10 .628 9.327 0 8.5 0zm-7 .933h7c.276 0 .5.21.5.467v9.802H1V1.4c0-.257.224-.467.5-.467zm7 13.07h-7c-.276 0-.5-.21-.5-.467v-1.4h8v1.4c0 .257-.224.466-.5.466z"
+                    />
+                    <path
+                      d="M2.354 12.739a.445.445 0 010 .66.525.525 0 01-.708 0 .445.445 0 010-.66.525.525 0 01.708 0z"
+                    />
+                  </svg>
+                  +38 096 111 11 11
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- Table filters -->
-
-        <div class="inner-section__filters">
-          <p class="filters-title">Filters:</p>
-          <ul class="filters-list">
-            <li class="filters-listItem">URL or its part</li>
-            <li>
-              <div class="select-container">
-                <select>
-                  <option value="0">All types</option>
-                </select>
-              </div>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <section class="hero" data-hero-section>
+        <div class="container hero-section">
+          <h1 class="hero-title">
+            Effectively solutions <br />for your business
+          </h1>
+          <button type="button" class="hero-button" data-open-modal>
+            Order service
+          </button>
+        </div>
+      </section>
+      <section class="advantages">
+        <div class="container">
+          <h2 class="advantages-title">Our advantages</h2>
+          <ul class="advantages-list">
+            <li class="advantages-item">
+              <div class="advantages-img antenna"></div>
+              <h3 class="advantages-subtitle">Lorem, ipsum.</h3>
+              <p class="advantages-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
+                nostrum?
+              </p>
             </li>
-            <li>
-              <div class="select-container">
-                <select>
-                  <option value="0">Submitted</option>
-                </select>
-              </div>
+            <li class="advantages-item">
+              <div class="advantages-img clock"></div>
+              <h3 class="advantages-subtitle">Lorem, ipsum.</h3>
+              <p class="advantages-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                quam fuga reprehenderit corrupti aut tempora perferendis minus
+                impedit non distinctio.
+              </p>
             </li>
-            <li>
-              <div class="select-container">
-                <div class="select-wrapper">
-                  <select>
-                    <option value="0">
-                      2/12/19-2/12
-                    </option>
-                  </select>
-                </div>
-              </div>
+            <li class="advantages-item">
+              <div class="advantages-img comp"></div>
+              <h3 class="advantages-subtitle">Lorem, ipsum.</h3>
+              <p class="advantages-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
+                repellat maxime, ipsum maiores autem exercitationem?
+              </p>
             </li>
-            <li>
-              <div class="select-container">
-                <select>
-                  <option value="0">All sitemaps</option>
-                </select>
-              </div>
+            <li class="advantages-item">
+              <div class="advantages-img fly"></div>
+              <h3 class="advantages-subtitle">Lorem, ipsum.</h3>
+              <p class="advantages-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
+                suscipit doloremque quas dolorum quo in placeat itaque ipsam,
+                debitis possimus expedita inventore eius. Perspiciatis, qui.
+              </p>
             </li>
           </ul>
         </div>
-        <!-- Table -->
-        <table id="table">
-          <tr class="table-header">
-            <th>
-              <input type="checkbox" name="" value="" />
-            </th>
-            <th>Sitemap(5)</th>
-            <th>Type</th>
-            <th>Submitted</th>
-            <th>Last check</th>
-            <th>Status</th>
-            <th>URLs</th>
-            <th>Recrawl sitemap</th>
-            <th>Remove sitemap</th>
-          </tr>
-          <tr class="table-row"></tr>
-        </table>
+      </section>
+      <section class="capability">
+        <div class="container">
+          <h2 class="capability-title">Our business</h2>
+          <ul class="capability-list">
+            <li class="capability-item">
+              <img
+                src="./images/computer (1).jpg"
+                alt="computer picture"
+                height="294"
+                class="capability-img"
+              />
+              <p class="capability-descr">Desctop applications</p>
+            </li>
+            <li class="capability-item">
+              <img
+                src="./images/box (1).jpg"
+                alt="box picture"
+                height="294"
+                class="capability-img"
+              />
+              <p class="capability-descr">Mobile applications</p>
+            </li>
+            <li class="capability-item">
+              <img
+                src="./images/board (1).jpg"
+                alt="board picture"
+                height="294"
+                class="capability-img"
+              />
+              <p class="capability-descr">Design</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="team section-color">
+        <div class="container">
+          <h2 class="team-title">Our Team</h2>
+
+          <ul class="team-list">
+            <li class="team-item">
+              <img
+                src="./images/Kurchenco .jpg"
+                alt="Nick Kurchenco"
+                class="item-image"
+                height="320"
+              />
+              <h3 class="item-title">Nick Kurchenco</h3>
+              <p class="item-descr">Product Designet</p>
+              <ul class="social-list">
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.98 5.88c-.046-1.063-.218-1.793-.464-2.426a4.88 4.88 0 00-1.157-1.774 4.922 4.922 0 00-1.77-1.153C15.952.281 15.226.11 14.163.063 13.093.012 12.753 0 10.037 0 7.322 0 6.982.012 5.915.059 4.853.105 4.122.277 3.49.523A4.88 4.88 0 001.715 1.68 4.924 4.924 0 00.563 3.45C.316 4.087.145 4.813.098 5.876c-.051 1.07-.063 1.41-.063 4.126 0 2.715.012 3.055.059 4.122.047 1.063.219 1.793.465 2.426a4.932 4.932 0 001.156 1.774c.5.508 1.106.902 1.77 1.152.637.247 1.364.419 2.426.465 1.067.047 1.407.059 4.122.059 2.716 0 3.056-.012 4.122-.059 1.063-.046 1.793-.218 2.426-.464a5.116 5.116 0 002.927-2.927c.246-.637.418-1.364.465-2.426.047-1.067.058-1.407.058-4.122s-.004-3.055-.05-4.122zm-1.8 8.166c-.044.977-.208 1.504-.344 1.856a3.318 3.318 0 01-1.9 1.898c-.35.137-.882.301-1.855.344-1.055.047-1.371.059-4.04.059-2.668 0-2.989-.012-4.04-.059-.977-.043-1.504-.207-1.856-.344a3.077 3.077 0 01-1.148-.746 3.11 3.11 0 01-.747-1.148c-.136-.352-.3-.883-.343-1.856-.047-1.055-.059-1.372-.059-4.04 0-2.669.012-2.99.059-4.04.043-.977.207-1.504.343-1.856A3.04 3.04 0 013 2.965a3.105 3.105 0 011.15-.746c.35-.137.882-.3 1.855-.344 1.055-.046 1.372-.058 4.04-.058 2.672 0 2.989.012 4.04.058.977.043 1.504.207 1.856.344.433.16.828.414 1.148.746.332.325.586.715.747 1.15.136.35.3.882.343 1.855.047 1.055.059 1.371.059 4.04 0 2.668-.012 2.98-.059 4.036z"
+                        />
+                        <path
+                          d="M10.037 4.864A5.139 5.139 0 004.9 10.002a5.139 5.139 0 0010.276 0 5.139 5.139 0 00-5.138-5.138zm0 8.47a3.333 3.333 0 11.001-6.666 3.333 3.333 0 010 6.667zM16.578 4.661a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M20 3.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.192 8.192 0 01-2.6.992A4.099 4.099 0 009.75 5.976c0 .325.027.638.095.935-3.409-.166-6.425-1.8-8.451-4.288A4.128 4.128 0 00.83 4.694c0 1.42.732 2.679 1.821 3.407A4.05 4.05 0 01.8 7.597v.045a4.119 4.119 0 003.285 4.03 4.09 4.09 0 01-1.075.134c-.262 0-.527-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.856a8.238 8.238 0 01-5.084 1.75A7.67 7.67 0 010 16.284a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.668 0-.18-.006-.356-.015-.53A8.179 8.179 0 0020 3.8z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M13.33 3.32h1.827V.14a23.576 23.576 0 00-2.66-.14C9.864 0 8.06 1.656 8.06 4.7v2.8H5.156v3.555H8.06V20h3.562v-8.944h2.787l.443-3.555h-3.231V5.05c0-1.027.277-1.73 1.709-1.73z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.995 20H20v-7.336c0-3.588-.772-6.352-4.967-6.352-2.017 0-3.37 1.106-3.923 2.156h-.058V6.647H7.074v13.352h4.142v-6.611c0-1.741.33-3.425 2.486-3.425 2.124 0 2.156 1.987 2.156 3.536V20h4.137zM.33 6.647h4.147V20H.33V6.647zM2.402 0A2.402 2.402 0 000 2.402c0 1.325 1.076 2.424 2.402 2.424 1.325 0 2.401-1.098 2.401-2.424A2.403 2.403 0 002.402 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-item">
+              <img
+                src="./images/olga (1).jpg"
+                alt="Olga Ivanova"
+                class="item-image"
+                height="320"
+              />
+              <h3 class="item-title">Olga Ivanova</h3>
+              <p class="item-descr">Frontend Developer</p>
+              <ul class="social-list">
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.98 5.88c-.046-1.063-.218-1.793-.464-2.426a4.88 4.88 0 00-1.157-1.774 4.922 4.922 0 00-1.77-1.153C15.952.281 15.226.11 14.163.063 13.093.012 12.753 0 10.037 0 7.322 0 6.982.012 5.915.059 4.853.105 4.122.277 3.49.523A4.88 4.88 0 001.715 1.68 4.924 4.924 0 00.563 3.45C.316 4.087.145 4.813.098 5.876c-.051 1.07-.063 1.41-.063 4.126 0 2.715.012 3.055.059 4.122.047 1.063.219 1.793.465 2.426a4.932 4.932 0 001.156 1.774c.5.508 1.106.902 1.77 1.152.637.247 1.364.419 2.426.465 1.067.047 1.407.059 4.122.059 2.716 0 3.056-.012 4.122-.059 1.063-.046 1.793-.218 2.426-.464a5.116 5.116 0 002.927-2.927c.246-.637.418-1.364.465-2.426.047-1.067.058-1.407.058-4.122s-.004-3.055-.05-4.122zm-1.8 8.166c-.044.977-.208 1.504-.344 1.856a3.318 3.318 0 01-1.9 1.898c-.35.137-.882.301-1.855.344-1.055.047-1.371.059-4.04.059-2.668 0-2.989-.012-4.04-.059-.977-.043-1.504-.207-1.856-.344a3.077 3.077 0 01-1.148-.746 3.11 3.11 0 01-.747-1.148c-.136-.352-.3-.883-.343-1.856-.047-1.055-.059-1.372-.059-4.04 0-2.669.012-2.99.059-4.04.043-.977.207-1.504.343-1.856A3.04 3.04 0 013 2.965a3.105 3.105 0 011.15-.746c.35-.137.882-.3 1.855-.344 1.055-.046 1.372-.058 4.04-.058 2.672 0 2.989.012 4.04.058.977.043 1.504.207 1.856.344.433.16.828.414 1.148.746.332.325.586.715.747 1.15.136.35.3.882.343 1.855.047 1.055.059 1.371.059 4.04 0 2.668-.012 2.98-.059 4.036z"
+                        />
+                        <path
+                          d="M10.037 4.864A5.139 5.139 0 004.9 10.002a5.139 5.139 0 0010.276 0 5.139 5.139 0 00-5.138-5.138zm0 8.47a3.333 3.333 0 11.001-6.666 3.333 3.333 0 010 6.667zM16.578 4.661a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M20 3.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.192 8.192 0 01-2.6.992A4.099 4.099 0 009.75 5.976c0 .325.027.638.095.935-3.409-.166-6.425-1.8-8.451-4.288A4.128 4.128 0 00.83 4.694c0 1.42.732 2.679 1.821 3.407A4.05 4.05 0 01.8 7.597v.045a4.119 4.119 0 003.285 4.03 4.09 4.09 0 01-1.075.134c-.262 0-.527-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.856a8.238 8.238 0 01-5.084 1.75A7.67 7.67 0 010 16.284a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.668 0-.18-.006-.356-.015-.53A8.179 8.179 0 0020 3.8z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M13.33 3.32h1.827V.14a23.576 23.576 0 00-2.66-.14C9.864 0 8.06 1.656 8.06 4.7v2.8H5.156v3.555H8.06V20h3.562v-8.944h2.787l.443-3.555h-3.231V5.05c0-1.027.277-1.73 1.709-1.73z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.995 20H20v-7.336c0-3.588-.772-6.352-4.967-6.352-2.017 0-3.37 1.106-3.923 2.156h-.058V6.647H7.074v13.352h4.142v-6.611c0-1.741.33-3.425 2.486-3.425 2.124 0 2.156 1.987 2.156 3.536V20h4.137zM.33 6.647h4.147V20H.33V6.647zM2.402 0A2.402 2.402 0 000 2.402c0 1.325 1.076 2.424 2.402 2.424 1.325 0 2.401-1.098 2.401-2.424A2.403 2.403 0 002.402 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-item">
+              <img
+                src="./images/anrew (1).jpg"
+                alt="Andrew Shevchenco"
+                class="item-image"
+                height="320"
+              />
+              <h3 class="item-title">Andrew Shevchenco</h3>
+              <p class="item-descr">Marketing</p>
+              <ul class="social-list">
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.98 5.88c-.046-1.063-.218-1.793-.464-2.426a4.88 4.88 0 00-1.157-1.774 4.922 4.922 0 00-1.77-1.153C15.952.281 15.226.11 14.163.063 13.093.012 12.753 0 10.037 0 7.322 0 6.982.012 5.915.059 4.853.105 4.122.277 3.49.523A4.88 4.88 0 001.715 1.68 4.924 4.924 0 00.563 3.45C.316 4.087.145 4.813.098 5.876c-.051 1.07-.063 1.41-.063 4.126 0 2.715.012 3.055.059 4.122.047 1.063.219 1.793.465 2.426a4.932 4.932 0 001.156 1.774c.5.508 1.106.902 1.77 1.152.637.247 1.364.419 2.426.465 1.067.047 1.407.059 4.122.059 2.716 0 3.056-.012 4.122-.059 1.063-.046 1.793-.218 2.426-.464a5.116 5.116 0 002.927-2.927c.246-.637.418-1.364.465-2.426.047-1.067.058-1.407.058-4.122s-.004-3.055-.05-4.122zm-1.8 8.166c-.044.977-.208 1.504-.344 1.856a3.318 3.318 0 01-1.9 1.898c-.35.137-.882.301-1.855.344-1.055.047-1.371.059-4.04.059-2.668 0-2.989-.012-4.04-.059-.977-.043-1.504-.207-1.856-.344a3.077 3.077 0 01-1.148-.746 3.11 3.11 0 01-.747-1.148c-.136-.352-.3-.883-.343-1.856-.047-1.055-.059-1.372-.059-4.04 0-2.669.012-2.99.059-4.04.043-.977.207-1.504.343-1.856A3.04 3.04 0 013 2.965a3.105 3.105 0 011.15-.746c.35-.137.882-.3 1.855-.344 1.055-.046 1.372-.058 4.04-.058 2.672 0 2.989.012 4.04.058.977.043 1.504.207 1.856.344.433.16.828.414 1.148.746.332.325.586.715.747 1.15.136.35.3.882.343 1.855.047 1.055.059 1.371.059 4.04 0 2.668-.012 2.98-.059 4.036z"
+                        />
+                        <path
+                          d="M10.037 4.864A5.139 5.139 0 004.9 10.002a5.139 5.139 0 0010.276 0 5.139 5.139 0 00-5.138-5.138zm0 8.47a3.333 3.333 0 11.001-6.666 3.333 3.333 0 010 6.667zM16.578 4.661a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M20 3.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.192 8.192 0 01-2.6.992A4.099 4.099 0 009.75 5.976c0 .325.027.638.095.935-3.409-.166-6.425-1.8-8.451-4.288A4.128 4.128 0 00.83 4.694c0 1.42.732 2.679 1.821 3.407A4.05 4.05 0 01.8 7.597v.045a4.119 4.119 0 003.285 4.03 4.09 4.09 0 01-1.075.134c-.262 0-.527-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.856a8.238 8.238 0 01-5.084 1.75A7.67 7.67 0 010 16.284a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.668 0-.18-.006-.356-.015-.53A8.179 8.179 0 0020 3.8z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M13.33 3.32h1.827V.14a23.576 23.576 0 00-2.66-.14C9.864 0 8.06 1.656 8.06 4.7v2.8H5.156v3.555H8.06V20h3.562v-8.944h2.787l.443-3.555h-3.231V5.05c0-1.027.277-1.73 1.709-1.73z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.995 20H20v-7.336c0-3.588-.772-6.352-4.967-6.352-2.017 0-3.37 1.106-3.923 2.156h-.058V6.647H7.074v13.352h4.142v-6.611c0-1.741.33-3.425 2.486-3.425 2.124 0 2.156 1.987 2.156 3.536V20h4.137zM.33 6.647h4.147V20H.33V6.647zM2.402 0A2.402 2.402 0 000 2.402c0 1.325 1.076 2.424 2.402 2.424 1.325 0 2.401-1.098 2.401-2.424A2.403 2.403 0 002.402 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-item">
+              <img
+                src="./images/ivan (1).jpg"
+                alt="Ivan Nicolaev"
+                class="item-image"
+                height="320"
+              />
+              <h3 class="item-title">Ivan Nicolaev</h3>
+              <p class="item-descr">UI Designer</p>
+              <ul class="social-list">
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.98 5.88c-.046-1.063-.218-1.793-.464-2.426a4.88 4.88 0 00-1.157-1.774 4.922 4.922 0 00-1.77-1.153C15.952.281 15.226.11 14.163.063 13.093.012 12.753 0 10.037 0 7.322 0 6.982.012 5.915.059 4.853.105 4.122.277 3.49.523A4.88 4.88 0 001.715 1.68 4.924 4.924 0 00.563 3.45C.316 4.087.145 4.813.098 5.876c-.051 1.07-.063 1.41-.063 4.126 0 2.715.012 3.055.059 4.122.047 1.063.219 1.793.465 2.426a4.932 4.932 0 001.156 1.774c.5.508 1.106.902 1.77 1.152.637.247 1.364.419 2.426.465 1.067.047 1.407.059 4.122.059 2.716 0 3.056-.012 4.122-.059 1.063-.046 1.793-.218 2.426-.464a5.116 5.116 0 002.927-2.927c.246-.637.418-1.364.465-2.426.047-1.067.058-1.407.058-4.122s-.004-3.055-.05-4.122zm-1.8 8.166c-.044.977-.208 1.504-.344 1.856a3.318 3.318 0 01-1.9 1.898c-.35.137-.882.301-1.855.344-1.055.047-1.371.059-4.04.059-2.668 0-2.989-.012-4.04-.059-.977-.043-1.504-.207-1.856-.344a3.077 3.077 0 01-1.148-.746 3.11 3.11 0 01-.747-1.148c-.136-.352-.3-.883-.343-1.856-.047-1.055-.059-1.372-.059-4.04 0-2.669.012-2.99.059-4.04.043-.977.207-1.504.343-1.856A3.04 3.04 0 013 2.965a3.105 3.105 0 011.15-.746c.35-.137.882-.3 1.855-.344 1.055-.046 1.372-.058 4.04-.058 2.672 0 2.989.012 4.04.058.977.043 1.504.207 1.856.344.433.16.828.414 1.148.746.332.325.586.715.747 1.15.136.35.3.882.343 1.855.047 1.055.059 1.371.059 4.04 0 2.668-.012 2.98-.059 4.036z"
+                        />
+                        <path
+                          d="M10.037 4.864A5.139 5.139 0 004.9 10.002a5.139 5.139 0 0010.276 0 5.139 5.139 0 00-5.138-5.138zm0 8.47a3.333 3.333 0 11.001-6.666 3.333 3.333 0 010 6.667zM16.578 4.661a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M20 3.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.192 8.192 0 01-2.6.992A4.099 4.099 0 009.75 5.976c0 .325.027.638.095.935-3.409-.166-6.425-1.8-8.451-4.288A4.128 4.128 0 00.83 4.694c0 1.42.732 2.679 1.821 3.407A4.05 4.05 0 01.8 7.597v.045a4.119 4.119 0 003.285 4.03 4.09 4.09 0 01-1.075.134c-.262 0-.527-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.856a8.238 8.238 0 01-5.084 1.75A7.67 7.67 0 010 16.284a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.668 0-.18-.006-.356-.015-.53A8.179 8.179 0 0020 3.8z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M13.33 3.32h1.827V.14a23.576 23.576 0 00-2.66-.14C9.864 0 8.06 1.656 8.06 4.7v2.8H5.156v3.555H8.06V20h3.562v-8.944h2.787l.443-3.555h-3.231V5.05c0-1.027.277-1.73 1.709-1.73z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social-icon">
+                  <a href="" class="social-link">
+                    <svg
+                      class="social-svg"
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M19.995 20H20v-7.336c0-3.588-.772-6.352-4.967-6.352-2.017 0-3.37 1.106-3.923 2.156h-.058V6.647H7.074v13.352h4.142v-6.611c0-1.741.33-3.425 2.486-3.425 2.124 0 2.156 1.987 2.156 3.536V20h4.137zM.33 6.647h4.147V20H.33V6.647zM2.402 0A2.402 2.402 0 000 2.402c0 1.325 1.076 2.424 2.402 2.424 1.325 0 2.401-1.098 2.401-2.424A2.403 2.403 0 002.402 0z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <path d="M0 0h20v20H0z" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="clients">
+        <div class="container">
+          <h2 class="clients-title">Our Clients</h2>
+          <ul class="clients-list">
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M6 0l7.308 6.918h20.384v19.298L41 33.134V0H6z" />
+                  <path
+                    d="M0 6.626v32.188h34V26.02L13.523 6.634 0 6.626zm27.523 27.48H5.38V12.457h1.565V32.64h20.578v1.465zM9.791 44.784l.818-1.685h.684L10.1 45.345v1.309h-.62v-1.309L8.287 43.1h.686l.818 1.685zm3.51 1.042h-1.376l-.288.828h-.642l1.342-3.555h.555l1.345 3.555h-.645l-.29-.828zm-1.203-.498h1.03l-.515-1.475-.515 1.475zm3.638.366c0-.164.045-.315.134-.451.09-.139.266-.302.53-.491a2.265 2.265 0 01-.29-.444.877.877 0 01-.081-.354c0-.279.084-.498.254-.66.169-.162.397-.244.683-.244.26 0 .47.077.635.23.166.151.25.34.25.564a.785.785 0 01-.113.41 1.34 1.34 0 01-.369.371l-.242.176.687.81c.099-.195.148-.412.148-.651h.515c0 .437-.102.796-.307 1.076l.522.618h-.688l-.2-.237a1.47 1.47 0 01-.909.286c-.351 0-.633-.093-.844-.279a.932.932 0 01-.315-.73zm1.177.535c.2 0 .387-.067.561-.2l-.776-.916-.076.054c-.195.148-.293.317-.293.508 0 .164.053.298.159.4a.585.585 0 00.425.154zm-.328-2.29c0 .137.084.308.252.515l.27-.185.077-.061a.44.44 0 00.151-.345.311.311 0 00-.105-.236.37.37 0 00-.266-.1.348.348 0 00-.276.117.432.432 0 00-.103.295zm6.458 1.558c-.036.379-.176.675-.42.888-.244.212-.569.318-.974.318-.283 0-.533-.067-.75-.2a1.332 1.332 0 01-.498-.574 2.065 2.065 0 01-.183-.862v-.332c0-.335.06-.63.178-.886.12-.256.29-.453.51-.591.224-.139.48-.208.772-.208.392 0 .708.107.947.32.24.213.379.514.418.903h-.615c-.03-.255-.104-.439-.225-.551-.119-.114-.294-.171-.525-.171-.268 0-.475.098-.62.295-.143.196-.216.483-.22.862v.315c0 .384.069.677.206.879.138.202.34.303.605.303.242 0 .425-.055.547-.164.122-.109.2-.29.232-.544h.615zm3.391-.528c0 .349-.06.654-.18.918-.121.262-.294.464-.518.606-.223.14-.48.21-.772.21-.288 0-.545-.07-.771-.21a1.405 1.405 0 01-.523-.603 2.124 2.124 0 01-.185-.901v-.2c0-.347.06-.653.183-.918.124-.266.297-.468.52-.608.225-.142.482-.213.771-.213.29 0 .547.07.77.21.224.139.398.339.52.6.122.261.184.565.185.912v.197zm-.618-.185c0-.394-.075-.696-.224-.906a.728.728 0 00-.633-.315.731.731 0 00-.627.315c-.15.208-.226.504-.23.886v.205c0 .39.076.693.228.906.153.213.364.32.634.32.274 0 .484-.104.63-.313.148-.208.222-.512.222-.913v-.185z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.977 2.935h.137c.253 0 .526.025.796.048 1.193.084 2.377.263 3.542.534V.654A21.09 21.09 0 0017.797.07 29.244 29.244 0 0016.319 0h-.427c-2.475.01-4.94.327-7.336.946-2.73.68-5.351 1.747-7.784 3.166v28.397a31.634 31.634 0 017.42-2.892 32.36 32.36 0 016.227-.956h.084c.352-.018.703-.028 1.065-.03v-2.91a34.328 34.328 0 00-8.095 1.076c-.98.255-1.925.53-2.813.834l-1.012.344V5.833l.432-.208a28.275 28.275 0 0110.517-2.683.625.625 0 01.09 0c.403-.02.808-.03 1.205-.03h.455c.21.005.42.01.63.023z"
+                  />
+                  <path
+                    d="M24.11 5.933a25.913 25.913 0 01-4.234-.344c-.45-.076-.893-.168-1.323-.267v28.072c1.82.45 3.69.67 5.565.656a29.943 29.943 0 007.337-.944 29.815 29.815 0 007.786-3.166V2.05a31.777 31.777 0 01-7.417 2.893c-2.52.648-5.112.98-7.713.99zm11.225.485l1.012-.34v22.148l-.433.209a27.764 27.764 0 01-5.173 1.859c-2.163.56-4.387.847-6.62.857-.668 0-1.33-.028-1.973-.084l-.693-.061V8.228l.807.054c.587.038 1.194.056 1.854.056 2.835-.01 5.659-.372 8.406-1.078.944-.25 1.882-.529 2.813-.842zM2.737 42.212a1.492 1.492 0 00-1.126-.455 1.674 1.674 0 00-.65.122 1.463 1.463 0 00-.832.842c-.08.2-.119.413-.116.628v3.794c-.01.267.042.533.149.778.09.194.219.368.38.509.151.127.329.22.52.27.185.051.376.078.567.078.211.002.42-.043.612-.132a1.597 1.597 0 00.96-1.465v-.425h-.993v.339a.882.882 0 01-.058.338.608.608 0 01-.144.214.697.697 0 01-.415.145.504.504 0 01-.465-.204.899.899 0 01-.132-.509v-3.537c-.006-.196.036-.39.122-.567a.507.507 0 01.485-.229.526.526 0 01.443.214.806.806 0 01.164.508v.328h.982v-.386a1.788 1.788 0 00-.121-.664 1.562 1.562 0 00-.332-.534zM8.629 42.17a1.765 1.765 0 00-1.128-.418c-.202.001-.403.037-.592.107a1.559 1.559 0 00-.908.842c-.1.232-.15.482-.145.735v3.639c-.006.255.043.51.145.745.09.195.22.369.384.508.152.14.33.25.524.32.19.07.39.106.592.107a1.714 1.714 0 001.128-.427c.158-.142.286-.315.374-.508.102-.235.151-.49.145-.745v-3.64a1.77 1.77 0 00-.145-.734 1.643 1.643 0 00-.374-.532zm-.463 4.904a.654.654 0 01-.197.527.727.727 0 01-.934 0 .651.651 0 01-.197-.526v-3.64a.654.654 0 01.197-.526.727.727 0 01.934 0 .651.651 0 01.197.527v3.639zM16.367 48.7v-6.89h-.953l-1.253 3.647h-.017L12.88 41.81h-.943v6.89h.984v-4.191h.018l.963 2.962h.491l.972-2.962h.017v4.19h.984zM21.958 42.294c-.151-.17-.343-.3-.556-.377a2.184 2.184 0 00-.714-.106h-1.462v6.888h.982v-2.69h.505c.307.014.611-.05.886-.188a1.43 1.43 0 00.539-.527c.113-.183.19-.387.225-.6.038-.259.056-.52.053-.783.01-.33-.023-.661-.096-.984a1.467 1.467 0 00-.362-.633zm-.506 2.1a.866.866 0 01-.091.359.553.553 0 01-.253.241 1.007 1.007 0 01-.463.087h-.448v-2.342h.506a.941.941 0 01.443.086.556.556 0 01.23.255c.054.12.083.251.086.384v.457c0 .16.01.326 0 .473h-.01zM26.608 41.81h-.805l-1.518 6.89h.982l.288-1.48h1.338l.289 1.48h.982l-1.556-6.89zm-.906 4.471l.483-2.497h.018l.48 2.497h-.981zM32.95 45.96h-.018l-1.482-4.15h-.944v6.89h.982v-4.143h.02l1.5 4.142h.923V41.81h-.981v4.15zM38.948 41.81l-.79 2.74h-.02l-.79-2.74H36.31l1.348 3.978v2.911h.982v-2.911l1.348-3.977h-1.04zM0 50.645h.473v1.327h.321v-1.327h.47v-.272H0v.272zM3.977 50.373l-.62 1.599h.341l.132-.364h.637l.137.364h.35l-.636-1.6h-.341zm-.05.966l.217-.593.217.593h-.435zM7.908 51.382h.37v.206a.613.613 0 01-.38.135.404.404 0 01-.34-.153.669.669 0 01-.118-.417c0-.356.154-.534.46-.534a.337.337 0 01.362.255l.316-.062c-.068-.312-.293-.47-.678-.47a.804.804 0 00-.559.206.78.78 0 00-.23.615.873.873 0 00.205.6.776.776 0 00.607.235.96.96 0 00.678-.255v-.63h-.693v.27zM11.923 50.373h-.324v1.599h1.12V51.7h-.796v-1.327zM15.318 50.373h-.324v1.599h.324v-1.6zM18.637 51.44l-.656-1.067h-.313v1.599h.3v-1.045l.643 1.045h.322v-1.6h-.296v1.069zM21.637 51.268h.797v-.272h-.797v-.351h.857v-.272h-1.181v1.599h1.214V51.7h-.89v-.432zM28.912 51.003h-.63v-.63h-.32v1.599h.32v-.7h.63v.7h.322v-1.6h-.322v.631zM31.93 51.268h.8v-.272h-.8v-.351h.86v-.272H31.61v1.599h1.212V51.7h-.89v-.432zM36.023 51.268c.278-.044.42-.191.42-.445a.383.383 0 00-.157-.356.904.904 0 00-.468-.094h-.678v1.599h.322v-.669h.063a.431.431 0 01.2.036c.047.029.086.069.114.117l.349.508h.384l-.195-.312a1.115 1.115 0 00-.354-.384zm-.324-.222h-.237v-.401h.253a.84.84 0 01.326.038.21.21 0 01-.015.325.913.913 0 01-.327.038zM39.11 51.268h.796v-.272h-.796v-.351h.86v-.272h-1.184v1.599H40V51.7h-.89v-.432z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.345 41.795a.118.118 0 01.08.034l.206.216c-.16.174-.357.314-.579.409-.26.104-.539.154-.82.147a2.011 2.011 0 01-.772-.137 1.672 1.672 0 01-.957-.986 2.163 2.163 0 01-.131-.767 2.017 2.017 0 01.141-.77c.09-.222.226-.425.4-.597.175-.17.385-.302.616-.39.254-.094.524-.14.795-.137.253-.006.504.036.738.125.204.084.391.2.553.345l-.172.23a.173.173 0 01-.044.042.11.11 0 01-.069.018.157.157 0 01-.075-.025l-.092-.061-.129-.079a1.4 1.4 0 00-.406-.137 1.643 1.643 0 00-.306-.024 1.532 1.532 0 00-.571.102 1.29 1.29 0 00-.448.29c-.128.133-.227.29-.29.46-.073.195-.109.401-.106.608-.003.21.033.42.105.618.063.169.16.325.286.458.118.125.264.222.427.285.168.066.348.1.53.098.105.001.21-.005.314-.02.17-.02.332-.076.475-.164.072-.045.14-.096.204-.152a.153.153 0 01.097-.04zM12.287 40.71c.003.26-.044.52-.139.763a1.655 1.655 0 01-.387.592 1.754 1.754 0 01-.608.388 2.296 2.296 0 01-1.564 0 1.777 1.777 0 01-.604-.39 1.74 1.74 0 01-.391-.597 2.167 2.167 0 010-1.527c.087-.223.22-.427.39-.6a1.78 1.78 0 01.605-.375 2.258 2.258 0 011.564 0c.228.088.435.22.607.39.17.17.301.37.388.59.095.245.143.505.14.767zm-.54 0a1.759 1.759 0 00-.098-.612 1.208 1.208 0 00-.71-.747 1.658 1.658 0 00-1.137 0 1.208 1.208 0 00-.712.747c-.13.4-.13.827 0 1.226a1.203 1.203 0 00.712.745c.367.13.77.13 1.137 0 .166-.064.314-.162.435-.287.123-.134.217-.29.275-.458.07-.198.102-.405.098-.613zM16.34 41.353l.055.137c.02-.049.038-.093.059-.137a1.32 1.32 0 01.067-.135l1.314-2.276c.026-.04.049-.064.075-.071a.322.322 0 01.108-.012h.388v3.702h-.46V39.84v-.115a1.085 1.085 0 010-.128l-1.322 2.309a.202.202 0 01-.078.084.216.216 0 01-.113.03h-.074c-.04.001-.08-.01-.113-.03a.2.2 0 01-.078-.084l-1.36-2.324v2.973h-.445v-3.695h.388a.322.322 0 01.108.012.15.15 0 01.072.071l1.343 2.279a.805.805 0 01.067.132zM21.287 41.17v1.386h-.514V38.86h1.147c.216-.004.432.023.64.08.167.045.321.124.453.23.114.1.202.225.257.363.061.151.09.312.088.473.002.162-.03.323-.096.473a1.01 1.01 0 01-.277.37 1.27 1.27 0 01-.456.245c-.2.061-.41.09-.62.086l-.622-.01zm0-.398h.623c.135.002.27-.017.398-.056a.843.843 0 00.288-.16.652.652 0 00.175-.244.768.768 0 00.062-.312.677.677 0 00-.052-.3.708.708 0 00-.18-.253 1.033 1.033 0 00-.691-.199h-.623v1.524zM28.201 42.561h-.406a.181.181 0 01-.114-.034.226.226 0 01-.067-.086l-.35-.894h-1.756l-.363.894a.2.2 0 01-.064.083.181.181 0 01-.116.037h-.406l1.543-3.703h.535l1.564 3.703zm-2.546-1.375h1.45l-.612-1.507a2.6 2.6 0 01-.116-.348l-.059.194a1.84 1.84 0 01-.056.157l-.607 1.504zM30.423 38.875c.031.017.058.04.078.067l2.25 2.79v-.129-2.745h.46v3.703h-.257a.23.23 0 01-.105-.022.283.283 0 01-.082-.069l-2.249-2.788c.003.042.003.085 0 .127v2.753h-.46v-3.704h.273c.032 0 .063.005.092.017zM37.003 41.088v1.47h-.515v-1.47l-1.422-2.23h.46a.173.173 0 01.111.032.314.314 0 01.07.084l.89 1.438c.035.061.066.118.092.172.026.053.046.105.064.156l.067-.159a1.3 1.3 0 01.088-.169l.877-1.448a.379.379 0 01.067-.079.161.161 0 01.11-.036h.466l-1.425 2.24zM16.086 32.644c.224.027.45.05.68.069 3.47-1.48 6.406-3.9 8.44-6.96 2.035-3.06 3.077-6.624 2.998-10.246l-3.825-3.644a20.22 20.22 0 01-1.05 11.512c-1.465 3.67-3.973 6.88-7.243 9.27z"
+                  />
+                  <path
+                    d="M14.72 32.475l.103.02c3.495-2.382 6.159-5.707 7.648-9.546a19.54 19.54 0 00.707-11.99L17.73 5.77a24.082 24.082 0 012.558 13.768c-.533 4.728-2.464 9.214-5.568 12.938zM33.196 19.786c-.925 3.98-3.173 7.568-6.41 10.234a20.218 20.218 0 01-3.045 2.082 18.188 18.188 0 007.08-3.813 17.085 17.085 0 004.585-6.4l-2.21-2.103z"
+                  />
+                  <path
+                    d="M32.33 19.2l-3.146-2.997a18.475 18.475 0 01-2.953 9.67c-1.873 2.915-4.532 5.299-7.699 6.903h.016c.705 0 1.41-.04 2.111-.12a19.338 19.338 0 007.611-5.33 18.093 18.093 0 004.06-8.126zM15.176 3.58L11.423 0c-3.355 1.235-6.24 3.406-8.278 6.23C1.107 9.053.01 12.397 0 15.823c.013 3.787 1.35 7.46 3.801 10.441 2.451 2.98 5.875 5.097 9.731 6.015 3.442-3.995 5.457-8.932 5.753-14.093.295-5.161-1.144-10.277-4.11-14.606zM41 18.649c-.014-4.492-1.893-8.797-5.227-11.973-3.334-3.177-7.852-4.967-12.567-4.98-2.179-.002-4.34.381-6.371 1.13l22.977 21.89A16.072 16.072 0 0041 18.65z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.402 12.83H12.4c-2.262 0-4.096 1.788-4.096 3.992v.003c0 2.204 1.834 3.992 4.096 3.992h.003c2.262 0 4.096-1.788 4.096-3.992v-.003c0-2.204-1.834-3.991-4.096-3.991zM42.637 11.555c-.007-3.063-1.258-5.997-3.48-8.163C36.938 1.227 33.926.007 30.784 0c-3.143.006-6.156 1.225-8.379 3.39-2.223 2.166-3.474 5.102-3.48 8.165V28.44s23.71-2.573 23.713-16.883v-.002zM0 33.982a7.96 7.96 0 002.422 5.68 8.384 8.384 0 005.827 2.362 8.384 8.384 0 005.826-2.361 7.96 7.96 0 002.424-5.678v-11.75S0 24.029 0 33.983zm8.25 2.105a2.2 2.2 0 01-1.2-.354 2.117 2.117 0 01-.797-.945 2.055 2.055 0 01-.122-1.216c.083-.409.289-.784.59-1.078a2.178 2.178 0 011.107-.576c.419-.082.853-.04 1.248.12.395.159.732.429.97.775a2.068 2.068 0 01.201 1.977c-.108.257-.267.49-.467.686-.201.196-.44.352-.702.458a2.209 2.209 0 01-.829.161v-.008zM25.09 34.781h-1.688v1.743h-.88V32.26H25.3v.712h-1.898v1.101h1.687v.71zm4.224-.293c0 .42-.075.788-.223 1.105-.148.316-.361.56-.639.732a1.755 1.755 0 01-.949.258 1.694 1.694 0 01-1.59-.981 2.511 2.511 0 01-.232-1.09V34.3c0-.42.075-.79.226-1.108.152-.32.366-.565.641-.735.277-.172.594-.258.95-.258.355 0 .67.086.946.258.277.17.49.415.641.735.152.319.229.687.229 1.105v.19zm-.89-.193c0-.447-.081-.787-.241-1.02a.783.783 0 00-.686-.348.782.782 0 00-.682.346c-.16.228-.242.564-.244 1.007v.208c0 .436.08.774.24 1.014.16.24.391.36.692.36a.775.775 0 00.68-.345c.158-.233.238-.57.24-1.014v-.208zm3.74 1.11a.447.447 0 00-.176-.38c-.117-.09-.328-.184-.632-.282a4.56 4.56 0 01-.724-.293c-.484-.262-.727-.614-.727-1.057 0-.23.065-.436.194-.616.13-.181.317-.323.56-.425.244-.101.517-.152.82-.152.304 0 .576.056.814.167.239.11.423.265.554.466.133.201.2.43.2.686h-.88c0-.196-.061-.347-.184-.454-.123-.11-.296-.165-.519-.165-.215 0-.382.046-.5.138a.426.426 0 00-.18.358c0 .138.07.254.208.348.141.094.347.182.619.264.5.15.864.337 1.092.56.229.222.343.5.343.831 0 .37-.14.66-.419.87-.28.21-.655.314-1.128.314-.328 0-.627-.06-.896-.179a1.439 1.439 0 01-.618-.495 1.27 1.27 0 01-.211-.726h.881c0 .47.282.706.844.706.21 0 .372-.042.49-.126a.418.418 0 00.175-.358zm4.69-2.434h-1.306v3.553h-.879v-3.553H33.38v-.712h3.475v.712zm3.071 1.705h-1.688v1.142h1.981v.706h-2.86V32.26h2.854v.712h-1.975v1.016h1.688v.689zm2.388.287h-.7v1.561h-.88V32.26h1.586c.503 0 .892.112 1.166.337.273.224.41.542.41.952 0 .29-.064.534-.19.73a1.282 1.282 0 01-.572.462l.923 1.743v.041h-.944l-.8-1.561zm-.7-.712h.709c.22 0 .391-.056.512-.167a.607.607 0 00.182-.466c0-.201-.058-.36-.173-.474-.113-.116-.288-.173-.524-.173h-.707v1.28zm5.326.77v1.503h-.88V32.26h1.665c.32 0 .601.058.844.176.244.117.431.284.562.5.131.215.196.46.196.736 0 .418-.143.748-.43.99-.285.24-.68.36-1.187.36h-.77zm0-.711h.785c.232 0 .41-.055.53-.165.123-.109.185-.265.185-.468a.704.704 0 00-.185-.507c-.123-.129-.293-.195-.51-.2h-.805v1.34zm5.56.366h-1.687v1.142h1.98v.706h-2.86V32.26h2.854v.712h-1.974v1.016h1.687v.689zm4.078-1.705h-1.306v3.553h-.88v-3.553h-1.288v-.712h3.474v.712zm3.07 1.705H57.96v1.142h1.98v.706h-2.859V32.26h2.854v.712H57.96v1.016h1.688v.689zm2.388.287h-.7v1.561h-.879V32.26h1.585c.504 0 .893.112 1.166.337.274.224.41.542.41.952 0 .29-.063.534-.19.73a1.282 1.282 0 01-.571.462l.923 1.743v.041h-.944l-.8-1.561zm-.7-.712h.71c.22 0 .39-.056.512-.167a.607.607 0 00.181-.466c0-.201-.057-.36-.172-.474-.114-.116-.288-.173-.525-.173h-.706v1.28zm5.165 1.154a.447.447 0 00-.175-.38c-.118-.09-.329-.184-.633-.282a4.565 4.565 0 01-.724-.293c-.484-.262-.727-.614-.727-1.057 0-.23.065-.436.194-.616.13-.181.317-.323.56-.425.243-.101.517-.152.82-.152.304 0 .576.056.814.167.238.11.423.265.554.466.133.201.2.43.2.686h-.88c0-.196-.061-.347-.184-.454-.123-.11-.296-.165-.519-.165-.215 0-.382.046-.5.138a.426.426 0 00-.18.358c0 .138.07.254.208.348.141.094.347.182.618.264.5.15.865.337 1.093.56.229.222.343.5.343.831 0 .37-.14.66-.419.87-.28.21-.655.314-1.128.314-.328 0-.627-.06-.896-.179a1.438 1.438 0 01-.618-.495 1.27 1.27 0 01-.211-.726h.882c0 .47.28.706.843.706.21 0 .372-.042.49-.126a.418.418 0 00.175-.358z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.488 39.278c.23.285.352.643.346 1.01a1.605 1.605 0 01-.536 1.277c-.447.339-1 .504-1.559.466H0v-6.405h2.683a2.284 2.284 0 011.487.426 1.464 1.464 0 01.52 1.198c.016.353-.095.7-.311.98-.209.254-.496.43-.817.5.363.067.692.26.926.548zm-3.213-.967H2.42c.261.02.52-.056.73-.213a.76.76 0 00.246-.626.789.789 0 00-.243-.626 1.105 1.105 0 00-.751-.215H1.275v1.68zm1.988 2.456a.794.794 0 00.271-.65.81.81 0 00-.277-.658 1.18 1.18 0 00-.78-.231H1.276v1.761h1.218c.274.016.546-.062.77-.222zM9.973 42.031L8.48 39.528h-.561v2.503H6.635v-6.405h2.43a2.39 2.39 0 011.693.545 2.048 2.048 0 01.18 2.65c-.3.345-.709.575-1.159.65l1.59 2.56H9.973zm-2.054-3.376h1.05c.73 0 1.094-.323 1.094-.97a.957.957 0 00-.268-.72 1.134 1.134 0 00-.826-.26H7.906l.013 1.95zM16.99 40.742h-2.558l-.452 1.29h-1.346l2.35-6.334h1.455l2.34 6.333h-1.346l-.442-1.289zm-.342-.97l-.935-2.703-.935 2.703h1.87zM25.776 42.031H24.5l-2.857-4.355v4.355h-1.272v-6.405h1.272l2.857 4.38v-4.38h1.275v6.405zM33.05 40.498a2.757 2.757 0 01-1.153 1.13c-.555.281-1.171.42-1.792.403h-2.27v-6.405h2.27a3.816 3.816 0 011.791.395c.488.246.89.636 1.154 1.117a3.736 3.736 0 010 3.36zm-1.459-.153a2.352 2.352 0 000-3.057 2.21 2.21 0 00-1.596-.545h-.885v4.146h.886a2.21 2.21 0 001.595-.544zM17.788 0S34.24 6.236 33.892 15.26v15.263s-16.44-6.24-16.096-15.263L17.788 0zM48.547 26.95A22.485 22.485 0 0159 23.082v-4.778a21.467 21.467 0 00-10.453 8.646z"
+                  />
+                  <path
+                    d="M46.68 28.389A22.382 22.382 0 0159 17.303V3.536s-23.43 8.883-22.934 21.733V47s1.044-.397 2.687-1.141c0-.695 0-1.396.075-2.1a22.605 22.605 0 017.853-15.37z"
+                  />
+                  <path
+                    d="M44.453 36.462c.123-1.508.397-2.998.82-4.45a21.04 21.04 0 00-4.962 13.126 68.003 68.003 0 004.506-2.384 22.581 22.581 0 01-.364-6.292zM45.384 36.54a21.586 21.586 0 00.29 5.698c6.401-3.846 13.594-9.788 13.317-16.969v-.625a20.971 20.971 0 00-12.18 5.713 21.496 21.496 0 00-1.427 6.183z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="" class="clients-link">
+                <svg
+                  class="clients-svg"
+                  width="45"
+                  height="50"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M44.74 21.353a3.258 3.258 0 01-.57-2.057v-2.982c0-.915.19-1.61.567-2.085.378-.475 1.028-.712 1.949-.71.865 0 1.48.202 1.843.607.396.516.589 1.147.545 1.784v.7h-1.548v-.71a3.961 3.961 0 00-.045-.694.689.689 0 00-.221-.413.836.836 0 00-.561-.16.886.886 0 00-.59.17.81.81 0 00-.256.455c-.045.243-.065.49-.061.737v3.62a2 2 0 00.198 1.016.735.735 0 00.31.247.78.78 0 00.399.057.788.788 0 00.548-.164.747.747 0 00.23-.44c.037-.24.053-.483.049-.725v-.735h1.548v.67a2.914 2.914 0 01-.536 1.876c-.355.443-.961.664-1.852.664-.891 0-1.564-.236-1.946-.728zM51.186 21.384c-.391-.465-.587-1.141-.587-2.036V16.21c0-.886.196-1.556.587-2.011.39-.455 1.044-.682 1.961-.68.91 0 1.56.227 1.952.68.39.455.59 1.125.59 2.011v3.138c0 .886-.2 1.565-.596 2.033-.398.467-1.045.7-1.946.7-.9 0-1.567-.236-1.961-.697zm2.682-.753c.14-.29.204-.61.186-.928v-3.841a1.843 1.843 0 00-.183-.91.738.738 0 00-.316-.25.785.785 0 00-.408-.054.794.794 0 00-.41.054.749.749 0 00-.317.25c-.141.283-.205.596-.186.91v3.859c-.02.32.044.638.186.928a.96.96 0 00.326.23 1.009 1.009 0 00.796 0 .96.96 0 00.326-.23v-.018zM57.55 13.61h1.667l1.253 5.79 1.282-5.79h1.622l.163 8.356H62.34l-.128-5.807-1.238 5.807h-.961l-1.282-5.828-.119 5.828H57.4l.15-8.355zM65.406 13.61h2.596c1.495 0 2.243.791 2.243 2.373 0 1.515-.787 2.271-2.362 2.27H67v3.713h-1.603l.01-8.355zm2.218 3.571c.158.02.319.006.47-.04.153-.045.293-.122.411-.223.184-.283.265-.614.23-.944a2.854 2.854 0 00-.076-.758.63.63 0 00-.118-.23.67.67 0 00-.203-.168 1.528 1.528 0 00-.714-.133h-.622v2.496h.622zM72.556 13.61h1.721l1.766 8.356h-1.494l-.349-1.927h-1.535l-.359 1.927H70.79l1.766-8.355zm1.471 5.462l-.6-3.508-.599 3.508h1.2zM77.47 13.61h1.12l2.148 4.767V13.61h1.33v8.355h-1.067l-2.16-4.976v4.976h-1.375l.003-8.355zM85.183 18.78l-1.785-5.158h1.503l1.09 3.313 1.022-3.313h1.471l-1.762 5.158v3.186h-1.539V18.78zM47.215 25.619v.437h-1.308v3.395h-.548v-3.395h-1.314v-.437h3.17zM51.314 29.451h-.423a.176.176 0 01-.119-.036.196.196 0 01-.07-.088l-.378-.91H48.51l-.379.91a.257.257 0 01-.057.103.183.183 0 01-.119.036h-.423l1.603-3.832h.557l1.622 3.817zm-2.654-1.423h1.513l-.641-1.56a2.964 2.964 0 01-.119-.36l-.06.203-.058.16-.635 1.557zM54.077 29.075c.1.005.2.005.3 0 .087-.009.173-.024.257-.046a1.82 1.82 0 00.23-.07c.071-.027.142-.06.216-.093v-.862h-.641a.12.12 0 01-.087-.03.084.084 0 01-.032-.07v-.295h1.244v1.469a2.355 2.355 0 01-.677.312 2.653 2.653 0 01-.4.08 4.455 4.455 0 01-.468.024 2.252 2.252 0 01-.808-.143 1.935 1.935 0 01-.64-.4 1.849 1.849 0 01-.414-.607 2.074 2.074 0 01-.148-.795 2.155 2.155 0 01.145-.802c.092-.227.232-.433.413-.606.183-.173.401-.308.641-.398.274-.098.566-.146.859-.142.15 0 .298.01.445.033.13.02.258.052.382.097.112.04.22.09.32.152.099.06.192.127.28.2l-.155.237a.14.14 0 01-.052.052.15.15 0 01-.073.02.196.196 0 01-.1-.03 1.906 1.906 0 01-.156-.09 1.369 1.369 0 00-.215-.104 1.869 1.869 0 00-.295-.085 2.256 2.256 0 00-.407-.033 1.743 1.743 0 00-.618.106c-.179.068-.34.171-.471.303-.133.138-.235.3-.298.477a1.953 1.953 0 000 1.277c.07.18.179.345.32.482.132.132.291.235.468.304.204.066.42.092.635.076zM59.185 29.014h1.75v.437H58.65v-3.832h.548l-.013 3.395zM62.755 29.45h-.548V25.62h.548v3.832zM64.794 25.637a.27.27 0 01.083.07l2.343 2.889a.972.972 0 010-.137v-2.855h.477v3.847h-.275a.24.24 0 01-.119-.021.314.314 0 01-.086-.073l-2.34-2.885v2.979h-.458V25.62h.285c.031 0 .062.006.09.018zM71.732 25.619v.422H69.79v1.265h1.574v.406H69.79v1.308h1.942v.422h-2.506v-3.823h2.506zM14.303 1.954l24.335 6.541v22.922L14.305 24.88V1.954zM12.743 0v25.992l27.453 7.382V7.384L12.743 0z"
+                  />
+                  <path d="M27.456 45.44L0 38.052v-25.99l27.456 7.385V45.44z" />
+                  <path
+                    d="M13.198 1.66l24.017 6.459-10.214 9.672-24.02-6.462 10.217-9.67zM12.743 0L0 12.063l27.456 7.385 12.74-12.063L12.743 0zM29.001 43.978l11.195-10.6-11.195-3.013v13.613z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <form action="" method="post" class="modal-form" autocomplete="off">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="form-closeBtn"
+            width="40"
+            height="44"
+            data-close-modal
+          >
+            <path
+              d="M29.667 12.88L27.787 11l-7.454 7.453L12.88 11 11 12.88l7.453 7.453L11 27.787l1.88 1.88 7.453-7.454 7.454 7.454 1.88-1.88-7.454-7.454 7.454-7.453z"
+            />
+          </svg>
+          <p class="form-descr">
+            Leave your information and we will call you back
+          </p>
+          <label class="form-label">
+            <input type="text" class="form-input" name="name" placeholder=" " />
+            <svg
+              width="18"
+              height="18"
+              class="form-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 9a3 3 0 100-6 3 3 0 100 6zm0 1.5c-2.003 0-6 1.005-6 3v.75c0 .412.337.75.75.75h10.5c.412 0 .75-.338.75-.75v-.75c0-1.995-3.998-3-6-3z"
+              />
+            </svg>
+            <span class="form-span">Name</span>
+          </label>
+          <label class="form-label">
+            <input type="tel" class="form-input" name="phone" placeholder=" " />
+            <svg
+              width="18"
+              height="18"
+              class="form-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.996 11.123l-1.838-.21a1.44 1.44 0 00-1.187.412l-1.332 1.332a10.888 10.888 0 01-4.769-4.77L6.21 6.55a1.44 1.44 0 00.412-1.187l-.21-1.824a1.448 1.448 0 00-1.44-1.28H3.72c-.818 0-1.498.68-1.448 1.497.384 6.18 5.327 11.116 11.5 11.5.817.05 1.498-.63 1.498-1.448v-1.252a1.434 1.434 0 00-1.274-1.432z"
+              />
+            </svg>
+            <span class="form-span">Phone</span>
+          </label>
+          <label class="form-label">
+            <input
+              type="email"
+              class="form-input"
+              name="email"
+              placeholder=" "
+              required
+            />
+            <svg
+              width="18"
+              height="18"
+              class="form-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3H3c-.825 0-1.492.675-1.492 1.5l-.008 9c0 .825.675 1.5 1.5 1.5h12c.825 0 1.5-.675 1.5-1.5v-9c0-.825-.675-1.5-1.5-1.5zm-.3 3.188L9.398 9.502a.759.759 0 01-.796 0L3.3 6.188a.637.637 0 11.675-1.08L9 8.25l5.025-3.143a.637.637 0 11.675 1.08z"
+              />
+            </svg>
+            <span class="form-span">Email</span>
+          </label>
+          <div class="text">
+            <textarea
+              class="comment"
+              name="comment"
+              id=""
+              rows="5"
+              placeholder=" "
+            ></textarea>
+            <span class="comment-span">comment</span>
+          </div>
+          <label class="form-checkbox">
+            <input
+              type="checkbox"
+              class="checkbox"
+              name="agreement"
+              value="agree"
+            />
+            <span class="form-icon" data-checkbox></span>
+            <span class="form-conditions">
+              I agree with the terms of the contract</span
+            >
+          </label>
+          <button
+            class="submit-button disabled"
+            type="submit"
+            data-submit-modal
+            disabled
+          >
+            Send
+          </button>
+        </form>
       </div>
-    </article>
+    </div>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="info">
+          <a href="./index.html" class="site-logo footer-logo"
+            >Web <span class="logo-footer">Studio</span></a
+          >
+          <address>
+            <span class="address">Lesy Ukrainki avenue, Kiev</span>
+            <ul>
+              <li class="contacts-info">info@example.com</li>
+              <li class="contacts-info">+38 099 111 11 11</li>
+            </ul>
+          </address>
+        </div>
+        <div class="socials">
+          <p class="footer-title">Join us</p>
+          <ul class="social-list">
+            <li class="social-icon">
+              <a href="" class="social-link footer-link">
+                <svg
+                  class="social-svg footer-svg"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M19.98 5.88c-.046-1.063-.218-1.793-.464-2.426a4.88 4.88 0 00-1.157-1.774 4.922 4.922 0 00-1.77-1.153C15.952.281 15.226.11 14.163.063 13.093.012 12.753 0 10.037 0 7.322 0 6.982.012 5.915.059 4.853.105 4.122.277 3.49.523A4.88 4.88 0 001.715 1.68 4.924 4.924 0 00.563 3.45C.316 4.087.145 4.813.098 5.876c-.051 1.07-.063 1.41-.063 4.126 0 2.715.012 3.055.059 4.122.047 1.063.219 1.793.465 2.426a4.932 4.932 0 001.156 1.774c.5.508 1.106.902 1.77 1.152.637.247 1.364.419 2.426.465 1.067.047 1.407.059 4.122.059 2.716 0 3.056-.012 4.122-.059 1.063-.046 1.793-.218 2.426-.464a5.116 5.116 0 002.927-2.927c.246-.637.418-1.364.465-2.426.047-1.067.058-1.407.058-4.122s-.004-3.055-.05-4.122zm-1.8 8.166c-.044.977-.208 1.504-.344 1.856a3.318 3.318 0 01-1.9 1.898c-.35.137-.882.301-1.855.344-1.055.047-1.371.059-4.04.059-2.668 0-2.989-.012-4.04-.059-.977-.043-1.504-.207-1.856-.344a3.077 3.077 0 01-1.148-.746 3.11 3.11 0 01-.747-1.148c-.136-.352-.3-.883-.343-1.856-.047-1.055-.059-1.372-.059-4.04 0-2.669.012-2.99.059-4.04.043-.977.207-1.504.343-1.856A3.04 3.04 0 013 2.965a3.105 3.105 0 011.15-.746c.35-.137.882-.3 1.855-.344 1.055-.046 1.372-.058 4.04-.058 2.672 0 2.989.012 4.04.058.977.043 1.504.207 1.856.344.433.16.828.414 1.148.746.332.325.586.715.747 1.15.136.35.3.882.343 1.855.047 1.055.059 1.371.059 4.04 0 2.668-.012 2.98-.059 4.036z"
+                    />
+                    <path
+                      d="M10.037 4.864A5.139 5.139 0 004.9 10.002a5.139 5.139 0 0010.276 0 5.139 5.139 0 00-5.138-5.138zm0 8.47a3.333 3.333 0 11.001-6.666 3.333 3.333 0 010 6.667zM16.578 4.661a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <path d="M0 0h20v20H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+            <li class="social-icon">
+              <a href="" class="social-link footer-link">
+                <svg
+                  class="social-svg footer-svg"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M20 3.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.192 8.192 0 01-2.6.992A4.099 4.099 0 009.75 5.976c0 .325.027.638.095.935-3.409-.166-6.425-1.8-8.451-4.288A4.128 4.128 0 00.83 4.694c0 1.42.732 2.679 1.821 3.407A4.05 4.05 0 01.8 7.597v.045a4.119 4.119 0 003.285 4.03 4.09 4.09 0 01-1.075.134c-.262 0-.527-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.856a8.238 8.238 0 01-5.084 1.75A7.67 7.67 0 010 16.284a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.668 0-.18-.006-.356-.015-.53A8.179 8.179 0 0020 3.8z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <path d="M0 0h20v20H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+            <li class="social-icon">
+              <a href="" class="social-link footer-link">
+                <svg
+                  class="social-svg footer-svg"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M13.33 3.32h1.827V.14a23.576 23.576 0 00-2.66-.14C9.864 0 8.06 1.656 8.06 4.7v2.8H5.156v3.555H8.06V20h3.562v-8.944h2.787l.443-3.555h-3.231V5.05c0-1.027.277-1.73 1.709-1.73z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <path d="M0 0h20v20H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+            <li class="social-icon">
+              <a href="" class="social-link footer-link">
+                <svg
+                  class="social-svg footer-svg"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M19.995 20H20v-7.336c0-3.588-.772-6.352-4.967-6.352-2.017 0-3.37 1.106-3.923 2.156h-.058V6.647H7.074v13.352h4.142v-6.611c0-1.741.33-3.425 2.486-3.425 2.124 0 2.156 1.987 2.156 3.536V20h4.137zM.33 6.647h4.147V20H.33V6.647zM2.402 0A2.402 2.402 0 000 2.402c0 1.325 1.076 2.424 2.402 2.424 1.325 0 2.401-1.098 2.401-2.424A2.403 2.403 0 002.402 0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <path d="M0 0h20v20H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-form">
+          <p class="footer-title">Subscribe</p>
+          <form action="" class="form">
+            <input
+              type="text"
+              name="email"
+              class="footer-input"
+              placeholder=" Email"
+            />
+            <button type="submit" class="footer-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,24 +1,29 @@
-// font family
+// device width
 
-$main-font-stack: "Roboto", sans-serif;
+$mobile: 480px;
+$tablet: 768px;
+$desctop: 1200px;
 
-// font size
-$main-font-size: 14px;
-$title-font-size: 20px;
+// colors
+$primary-color: #212121;
+$secondary-color: #2196f3;
+$secondary-text-color: #757575;
+$modile-menu-color: #fff;
+$footer-color: #2f303a;
+$team-section-color: #f5f4fa;
+$hero-section-main-color: #fff;
+$footer-address-color: rgba(255, 255, 255, 0.6);
+$footer-socials: rgba(255, 255, 255, 0.1);
+$capability-items: rgba(47, 48, 58, 0.8);
+$modal-backdrop: rgba(0, 0, 0, 0.2);
 
-// font color
-$main-font-color: #34495d;
-$title-font-color: #37474f;
-$button-font-color: #c2cfe0;
-$filters-listItem-color: #a5b5cb;
-$table-link-color: #0288d1;
-$table-status-success: #2ac9a1;
-$table-status-error: #fb6868;
+// borders
+$header-border: 1px solid #ececec;
+$header-menu-border: 0px 1px 2px -2px rgba(0, 0, 0, 0.16),
+  0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.04);
+$team-item-boxshadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
+  0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 
-//  background color
-$main-container-background: #f8f9f9;
-$inner-container-background: #fff;
-$inner-border-color: #c2cfe0;
-$inner-filters-background: #eaedf5;
-$table-header-color: #f6f8fe;
-$table-border-color: #f2f4fb;
+//   header
+$header-mob-heught: 60px;
+$desktop-height: 80px;

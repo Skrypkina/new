@@ -1,73 +1,67 @@
 import "./sass/style.scss";
-const moment = require("moment");
 
 ("use strict");
 
-const table = document.querySelector(".table-header");
-console.log(table);
+// mobile menu button
+const btn = document.querySelector("[ data-menu-button]");
+const menu = document.querySelector("[ data-menu ]");
+const mobileMenu = document.querySelector("[ data-mobile ]");
+const hero = document.querySelector("[ data-hero-section ]");
 
-// helpers
+btn.addEventListener("click", handleBtnClick);
 
-const checkStatus = num => {
-  if (num === 0) {
-    return "Success";
+function handleBtnClick() {
+  const expanded = btn.getAttribute("aria-expanded") === "true" || false;
+  btn.classList.toggle("is-open");
+  btn.setAttribute("aria-expanded", !expanded);
+  menu.classList.toggle("is-open");
+  hero.classList.toggle("is-open");
+}
+
+// styles for mobile-munu
+
+// function handleBtnClick() {
+//   const expanded = btn.getAttribute("aria-expanded") === "true" || false;
+
+//   btn.classList.toggle("is-open");
+//   btn.setAttribute("aria-expanded", !expanded);
+//   mobileMenu.classList.toggle("is-open");
+// }
+
+// modal
+
+const openBtn = document.querySelector("[ data-open-modal]");
+const modalCloseBtn = document.querySelector("[ data-close-modal]");
+const modalSubmitBtn = document.querySelector("[ data-submit-modal ]");
+const backdrop = document.querySelector("[ data-backdrop ]");
+const checkbox = document.querySelector("[ data-checkbox]");
+
+openBtn.addEventListener("click", toggleModal);
+checkbox.addEventListener("click", handleCheckboxClick);
+modalCloseBtn.addEventListener("click", toggleModal);
+modalSubmitBtn.addEventListener("click", toggleModal);
+
+function toggleModal() {
+  backdrop.classList.toggle("is-hidden");
+  backdrop.style.transition = "opacity 500ms ease-in";
+  if (!backdrop.classList.contains("is-hidden")) {
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.width = "100%";
+  } else {
+    const scrollY = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   }
-  return `<span class="span">${num} errors</span>`;
-};
+}
 
-const markup = (path, submitted, check, stat, links) => {
-  const checked = checkStatus(stat);
-  const date = submitted;
-  const updatedDate = moment(date).format(" MMMM Do YYYY");
-  const newDate = check;
-  const updatedNewDate = moment(date).format("MMMM Do YYYY");
-  console.log(updatedNewDate);
-
-  return `
-  <tr class="table-row">
- <td>   <input type="checkbox" name="" value="" /></td>
-  <td><a
-  href="#"
-  target="_blank"
-  class="table-link"
->${path}</td>
-  <td>Sitemap index</td>
-  <td>${updatedDate}</td>
-  <td>${updatedNewDate}</td>
-  <td class="table-status">${checked}</td>
-  <td>${links}</td>
-  <td><button type="button" class="recrawlBtn">Recrawl</button></td>
-  <td><button type="button" class="deleteBtn"></button></td>
-</tr>
-  `;
-};
-
-// fetch request
-
-fetch("https://semalt.tech/dev/api/v1/example/test/")
-  .then(res => {
-    if (res.ok) return res.json();
-    throw new Error("Error while fetching " + response.statusText);
-  })
-  .then(data => {
-    const res = data.result.sitemap.reduce(
-      (acc, arr) =>
-        acc +
-        markup(
-          arr.path,
-          arr.lastSubmitted,
-          arr.lastCheck,
-          arr.errors,
-          arr.urls
-        ),
-      ""
-    );
-
-    table.insertAdjacentHTML("afterend", res);
-  })
-
-  .catch(error => {
-    console.log(error);
-  });
-
-//
+function handleCheckboxClick() {
+  modalSubmitBtn.classList.toggle("disabled");
+  if (!modalSubmitBtn.classList.contains("disabled")) {
+    modalSubmitBtn.removeAttribute("disabled");
+  } else {
+    modalSubmitBtn.setAttribute("disabled", "true");
+  }
+}
